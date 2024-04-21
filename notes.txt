@@ -1,0 +1,5 @@
+cdktf init
+create git report and push
+cdktf provider add auth0/auth0
+(automatically runs cdktf get)
+(steps to generate classes if provider doesn't exist: https://developer.hashicorp.com/terraform/cdktf/concepts/providers#import-providers)

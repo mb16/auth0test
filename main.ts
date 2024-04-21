@@ -1,11 +1,14 @@
 import { Construct } from "constructs";
 import { App, TerraformStack, CloudBackend, NamedCloudWorkspace } from "cdktf";
-
+import * as auth0 from "./.gen/providers/auth0";
 class MyStack extends TerraformStack {
   constructor(scope: Construct, id: string) {
     super(scope, id);
 
-    // define resources here
+    new auth0.role.Role(this, "testgroupb", {
+      name: "testgroupb"
+    });
+
   }
 }
 
