@@ -1,5 +1,12 @@
 cdktf init
-create git report and push
+create git commit and push
 cdktf provider add auth0/auth0
 (automatically runs cdktf get)
-(steps to generate classes if provider doesn't exist: https://developer.hashicorp.com/terraform/cdktf/concepts/providers#import-providers)
+(steps to generate classes if provider doesn't exist: https://developer.hashicorp.com/terraform/cdktf/concepts/providers#import-providers
+need to add ccdktf.out/stacks/auth0-test as workspace in terraform
+need to run "cdktf synth" before an commits or create github action to handle this.
+
+
+
+
+Configure Codepsace:
