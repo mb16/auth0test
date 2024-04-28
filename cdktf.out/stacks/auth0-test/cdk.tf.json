@@ -1,0 +1,57 @@
+{
+  "//": {
+    "metadata": {
+      "backend": "cloud",
+      "cloud": "tfc",
+      "stackName": "auth0-test",
+      "version": "0.20.7"
+    },
+    "outputs": {
+    }
+  },
+  "provider": {
+    "auth0": [
+      {
+        "client_id": "${var.clientId}",
+        "client_secret": "${var.clientSecret}",
+        "domain": "${var.domain}"
+      }
+    ]
+  },
+  "resource": {
+    "auth0_role": {
+      "testgroupb": {
+        "//": {
+          "metadata": {
+            "path": "auth0-test/testgroupb",
+            "uniqueId": "testgroupb"
+          }
+        },
+        "name": "testgroupb"
+      }
+    }
+  },
+  "terraform": {
+    "cloud": {
+      "hostname": "app.terraform.io",
+      "organization": "dev-05844969-okta-com-DEV",
+      "workspaces": {
+        "name": "auth0-test"
+      }
+    },
+    "required_providers": {
+      "auth0": {
+        "source": "auth0/auth0",
+        "version": "1.2.0"
+      }
+    }
+  },
+  "variable": {
+    "clientId": {
+    },
+    "clientSecret": {
+    },
+    "domain": {
+    }
+  }
+}

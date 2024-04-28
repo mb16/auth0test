@@ -1,12 +1,25 @@
 import { Construct } from "constructs";
 import { App, TerraformStack, CloudBackend, NamedCloudWorkspace } from "cdktf";
 import * as auth0 from "./.gen/providers/auth0";
+import * as cdktf from "cdktf";
+//import { config } from "process";
+
 class MyStack extends TerraformStack {
   constructor(scope: Construct, id: string) {
     super(scope, id);
 
+    const clientId = new cdktf.TerraformVariable(this, "clientId", {});
+    const clientSecret = new cdktf.TerraformVariable(this, "clientSecret", {});
+    const domain = new cdktf.TerraformVariable(this, "domain", {});
+
     new auth0.role.Role(this, "testgroupb", {
       name: "testgroupb"
+    });
+
+    new auth0.provider.Auth0Provider(scope = this, "testAuth0Provider",  {
+      clientId: clientId.value,
+      clientSecret: clientSecret.value,
+      domain: domain.value
     });
 
   }
