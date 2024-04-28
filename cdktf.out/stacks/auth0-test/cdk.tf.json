@@ -37,6 +37,15 @@
           }
         },
         "name": "testgroupc"
+      },
+      "testgroupd": {
+        "//": {
+          "metadata": {
+            "path": "auth0-test/testgroupd",
+            "uniqueId": "testgroupd"
+          }
+        },
+        "name": "testgroupd"
       }
     }
   },

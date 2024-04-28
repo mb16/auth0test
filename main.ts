@@ -20,6 +20,10 @@ class MyStack extends TerraformStack {
       name: "testgroupc"
     });
 
+    new auth0.role.Role(this, "testgroupd", {
+      name: "testgroupd"
+    });
+
     new auth0.provider.Auth0Provider(scope = this, "testAuth0Provider",  {
       clientId: clientId.value,
       clientSecret: clientSecret.value,
