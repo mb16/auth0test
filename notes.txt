@@ -6,7 +6,7 @@ cdktf provider add auth0/auth0
 need to add ccdktf.out/stacks/auth0-test as workspace in terraform
 need to run "cdktf synth" before an commits or create github action to handle this.
 
-
+spacelift remote config: https://spacelift.io/blog/terraform-remote-state-with-spacelift
 
 
 Configure Codepsace:

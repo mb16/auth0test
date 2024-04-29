@@ -37,9 +37,17 @@ class MyStack extends TerraformStack {
 
 const app = new App();
 const stack = new MyStack(app, "auth0-test");
+
+//new CloudBackend(stack, {
+//  hostname: "app.terraform.io",
+//  organization: "dev-05844969-okta-com-DEV",
+//  workspaces: new NamedCloudWorkspace("auth0-test")
+//});
+
 new CloudBackend(stack, {
-  hostname: "app.terraform.io",
-  organization: "dev-05844969-okta-com-DEV",
-  workspaces: new NamedCloudWorkspace("auth0-test")
+  hostname: "spacelift.io",
+  organization: "mb16",
+  workspaces: new NamedCloudWorkspace("auth0_test")
 });
+
 app.synth();

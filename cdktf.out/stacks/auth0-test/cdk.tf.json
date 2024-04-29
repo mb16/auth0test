@@ -2,7 +2,7 @@
   "//": {
     "metadata": {
       "backend": "cloud",
-      "cloud": "tfc",
+      "cloud": "tfe",
       "stackName": "auth0-test",
       "version": "0.20.7"
     },
@@ -51,10 +51,10 @@
   },
   "terraform": {
     "cloud": {
-      "hostname": "app.terraform.io",
-      "organization": "dev-05844969-okta-com-DEV",
+      "hostname": "spacelift.io",
+      "organization": "mb16",
       "workspaces": {
-        "name": "auth0-test"
+        "name": "auth0_test"
       }
     },
     "required_providers": {
