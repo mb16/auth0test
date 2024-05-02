@@ -1,5 +1,5 @@
 import { Construct } from "constructs";
-import { App, TerraformStack, CloudBackend, NamedCloudWorkspace } from "cdktf";
+import { App, TerraformStack /* , CloudBackend, NamedCloudWorkspace */} from "cdktf";
 import * as auth0 from "./.gen/providers/auth0";
 import * as cdktf from "cdktf";
 //import { config } from "process";
@@ -36,7 +36,9 @@ class MyStack extends TerraformStack {
 }
 
 const app = new App();
-const stack = new MyStack(app, "auth0-test");
+new MyStack(app, "auth0_test");
+
+//const stack = new MyStack(app, "auth0-test");
 
 //new CloudBackend(stack, {
 //  hostname: "app.terraform.io",
@@ -44,10 +46,6 @@ const stack = new MyStack(app, "auth0-test");
 //  workspaces: new NamedCloudWorkspace("auth0-test")
 //});
 
-new CloudBackend(stack, {
-  hostname: "spacelift.io",
-  organization: "mb16",
-  workspaces: new NamedCloudWorkspace("auth0_test")
-});
+
 
 app.synth();

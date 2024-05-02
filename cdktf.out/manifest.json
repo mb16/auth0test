@@ -1,12 +1,12 @@
 {
   "version": "0.20.7",
   "stacks": {
-    "auth0-test": {
-      "name": "auth0-test",
-      "constructPath": "auth0-test",
-      "workingDirectory": "stacks/auth0-test",
-      "synthesizedStackPath": "stacks/auth0-test/cdk.tf.json",
-      "stackMetadataPath": "stacks/auth0-test/metadata.json",
+    "auth0_test": {
+      "name": "auth0_test",
+      "constructPath": "auth0_test",
+      "workingDirectory": "stacks/auth0_test",
+      "synthesizedStackPath": "stacks/auth0_test/cdk.tf.json",
+      "stackMetadataPath": "stacks/auth0_test/metadata.json",
       "annotations": [],
       "dependencies": []
     }
