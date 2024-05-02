@@ -1,7 +1,8 @@
 {
   "//": {
     "metadata": {
-      "backend": "local",
+      "backend": "cloud",
+      "cloud": "tfc",
       "stackName": "auth0_test",
       "version": "0.20.7"
     },
@@ -45,12 +46,25 @@
           }
         },
         "name": "testgroupd"
+      },
+      "testgroupz": {
+        "//": {
+          "metadata": {
+            "path": "auth0_test/testgroupz",
+            "uniqueId": "testgroupz"
+          }
+        },
+        "name": "testgroupz"
       }
     }
   },
   "terraform": {
-    "backend": {
-      "local": null
+    "cloud": {
+      "hostname": "app.terraform.io",
+      "organization": "dev-05844969-okta-com-DEV",
+      "workspaces": {
+        "name": "auth0-test"
+      }
     },
     "required_providers": {
       "auth0": {

@@ -1,5 +1,5 @@
 import { Construct } from "constructs";
-import { App, TerraformStack /* , CloudBackend, NamedCloudWorkspace */} from "cdktf";
+import { App, TerraformStack, CloudBackend, NamedCloudWorkspace } from "cdktf";
 import * as auth0 from "./.gen/providers/auth0";
 import * as cdktf from "cdktf";
 //import { config } from "process";
@@ -24,6 +24,10 @@ class MyStack extends TerraformStack {
       name: "testgroupd"
     });
 
+    new auth0.role.Role(this, "testgroupz", {
+      name: "testgroupz"
+    });
+
     new auth0.provider.Auth0Provider(scope = this, "testAuth0Provider",  {
       clientId: clientId.value,
       clientSecret: clientSecret.value,
@@ -36,15 +40,17 @@ class MyStack extends TerraformStack {
 }
 
 const app = new App();
-new MyStack(app, "auth0_test");
+//  new MyStack(app, "auth0_test"); // for spacelift
 
 //const stack = new MyStack(app, "auth0-test");
 
-//new CloudBackend(stack, {
-//  hostname: "app.terraform.io",
-//  organization: "dev-05844969-okta-com-DEV",
-//  workspaces: new NamedCloudWorkspace("auth0-test")
-//});
+// uncomment for terraform
+const stack = new MyStack(app, "auth0_test");
+new CloudBackend(stack, {
+  hostname: "app.terraform.io",
+  organization: "dev-05844969-okta-com-DEV",
+  workspaces: new NamedCloudWorkspace("auth0-test")
+});
 
 
 
