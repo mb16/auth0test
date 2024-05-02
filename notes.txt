@@ -8,5 +8,7 @@ need to run "cdktf synth" before an commits or create github action to handle th
 
 spacelift remote config: https://spacelift.io/blog/terraform-remote-state-with-spacelift
 
+backend for spaceelife: https://docs.spacelift.io/vendors/terraform/cdktf
+Need to set local backend to null to use spacelift state.
 
 Configure Codepsace:
